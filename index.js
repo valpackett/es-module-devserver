@@ -10,13 +10,14 @@ function resolvePath (root, filepath, url) {
 		return url
 	} catch (e) {}
 	try {
-		return path.relative(path.dirname(filepath), resolve.sync(url, {
-			basedir: root,
+		const result = path.relative(path.dirname(filepath), resolve.sync(url, {
+			basedir: path.dirname(filepath),
 			packageFilter: (pkg) => {
 				pkg.main = pkg.module || pkg['jsnext:main'] || pkg.main
 				return pkg
 			}
 		}))
+		return result.startsWith('.') ? result : './' + result
 	} catch (e) {}
 	return url
 }
