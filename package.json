@@ -1,0 +1,26 @@
+{
+  "name": "es-module-devserver",
+  "version": "0.0.0",
+  "description": "Simple static server middleware with ES Module path resolution",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myfreeweb/es-module-devserver.git"
+  },
+  "keywords": [
+    "modules",
+    "es-modules",
+    "javascript-modules",
+    "resolve",
+    "import"
+  ],
+  "author": "Greg V <greg@unrelenting.technology>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/myfreeweb/es-module-devserver/issues"
+  },
+  "homepage": "https://github.com/myfreeweb/es-module-devserver#readme",
+  "dependencies": {
+    "mime": "^2.3.1",
+    "resolve": "^1.8.1"
+  }
+}
