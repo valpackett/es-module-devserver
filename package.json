@@ -1,6 +1,6 @@
 {
   "name": "es-module-devserver",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple static server middleware with ES Module path resolution",
   "repository": {
     "type": "git",
