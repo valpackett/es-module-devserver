@@ -24,8 +24,8 @@ function resolvePath (root, filepath, url) {
 
 function transformJs (root, filepath, src) {
 	return src
-		.replace(/import\s+(|[\{\*\w][^"']*)["']([^"']+)["'][\t ]*($|;|\/\/|\/\*)/gm,
-			(match, pre, url, post) => `import ${pre}'${resolvePath(root, filepath, url)}'${post}`)
+		.replace(/import(\s*\(?)(|[\{\*\w][^"']*)["']([^"']+)["'][\t ]*($|;|\/\/|\/\*|\))/gm,
+			(match, s, pre, url, post) => `import${s}${pre}'${resolvePath(root, filepath, url)}'${post}`)
 		.replace(/export\s+([\{\*\w][^"']*)\s*from\s*["']([^"']+)["'][\t ]*($|;|\/\/|\/\*)/gm,
 			(match, pre, url, post) => `export ${pre} from '${resolvePath(root, filepath, url)}'${post}`)
 }
